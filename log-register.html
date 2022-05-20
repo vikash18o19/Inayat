@@ -142,6 +142,7 @@
       GoogleAuthProvider,
       signInWithRedirect,
       getRedirectResult,
+      signInWithPopup, 
       signOut
     } from "https://www.gstatic.com/firebasejs/9.8.1/firebase-auth.js";
     // TODO: Add SDKs for Firebase products that you want to use
@@ -176,6 +177,7 @@
       //     // The signed-in user info.
       //     const user = result.user;
       //   })
+
       // sign in with popup tab
       signInWithPopup(auth, provider)
         .then((result) => {
@@ -200,14 +202,15 @@
         });
     });
 
-    // login_id.addEventListener('click',(e) => {
+    signOut.addEventListener('click',(e) => {
 
-    //   signOut(auth).then(() => {
-    //     // Sign-out successful.
-    //   }).catch((error) => {
-    //     // An error happened.
-    //   });
+   signOut(auth).then(() => {
+    // Sign-out successful.
+   }).catch((error) => {
+    // An error happened.
+   });
 
-    // });
+  });
+
   </script>
 </html>
