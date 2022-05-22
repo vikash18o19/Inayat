@@ -50,11 +50,11 @@
       </div>
 
       <form id="login" class="input-group">
-        <input type="text" class="input-field" id="email" placeholder="User Id" required />
+        <input type="text" class="input-field" id="email_login" placeholder="User Id" required />
         <input
           type="text"
           class="input-field"
-          id="password"
+          id="password_login"
           placeholder="Enter Password"
           required
         />
@@ -276,8 +276,8 @@
 
   function login(){
     //Get all our input fields
-    email =document.getElementById('email').value
-    password =document.getElementById('password').value
+    email =document.getElementById('email_login').value
+    password =document.getElementById('password_login').value
 
     //Also validate 
     if(validate_email(email)==false || validate_password(password)==false){
