@@ -44,6 +44,7 @@
     <!--====== Responsive css ======-->
     <link rel="stylesheet" href="css/responsive.css">
   
+   
   
 </head>
 
@@ -111,7 +112,11 @@
                                     <span>&#43;91 9799397054</span>
                                 </div>
                             </div>
-                            <div class="button float-left">
+
+                            <div id="log_out" style="display: none;" class="button float-left">
+                                <h3 class="main-btn" onclick="logout()">Log Out</h3>
+                            </div>
+                            <div id="log_reg" style="display: block;"  class="button float-left">
                                 <a href="log-register.html" class="main-btn">Log In</a>
                                 <a href="log-register.html" class="main-btn">Register</a>
                             </div>
@@ -926,7 +931,15 @@ All people dream, but not equally. Some people dream just to pass their time but
     
     <!--====== Map js ======-->
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDC3Ip9iVC0nIxC6V14CKLQ1HZNF_65qEQ"></script>
+
+
+
     <script src="js/map-script.js"></script>
+
+    <script src="https://www.gstatic.com/firebasejs/9.8.4/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.8.4/firebase-firestore-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.8.4/firebase-auth-compat.js"></script>
+    <script src="js/index.js"></script>
 
 </body>
 </html>
