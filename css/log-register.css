@@ -25,7 +25,7 @@
 
 .form-box {
     width: 380px;
-    height: 560px;
+    height: 500px;
     position: relative;
     margin: 6% auto;
     background: white;
@@ -127,6 +127,10 @@
     color: white;
 }
 
+.soc-icon{
+    top: 9px;
+}
+
 .input-group {
     top: 180px;
     position: absolute;
@@ -182,7 +186,7 @@ span {
 }
 
 #register {
-    left: 450px;
+    left: 500px;
 }
 
 @media(max-width: 700px) {
@@ -258,4 +262,3 @@ select {
     }
 }
 
-#d9f1ff

@@ -19,6 +19,9 @@
 
     <!--====== Favicon Icon ======-->
     <link rel="shortcut icon" href="images/favicon.png" type="image/png" />
+    <script src="https://www.gstatic.com/firebasejs/9.8.4/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.8.4/firebase-firestore-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.8.4/firebase-auth-compat.js"></script>
   </head>
 
   <body bgcolor="#59bfff">
@@ -45,9 +48,16 @@
       </div>
 
       <form id="login" class="input-group">
-        <input type="text" class="input-field" placeholder="User Id" required />
+        <input 
+          type="text" 
+          id="userId"
+          class="input-field" 
+          placeholder="User Id" 
+          required 
+        />
         <input
           type="text"
+          id="pword"
           class="input-field"
           placeholder="Enter Password"
           required
@@ -55,7 +65,7 @@
         <input type="checkbox" class="chech-box" /><span
           >Remember Password</span
         >
-        <button type="submit" class="submit-btn">Log In</button>
+        <button type="button" class="submit-btn" onclick="signIn()">Log In</button>
       </form>
       <form id="register" class="input-group">
         <div class="dropdown">
@@ -72,34 +82,35 @@
         <input type="text" class="input-field" placeholder="Name" required />
         <input type="text" class="input-field" placeholder="Contact" required />
         <input
+          id="email"
           type="email"
           class="input-field"
           placeholder="Email Id"
           required
         />
         <input
+          id="password"
           type="text"
           class="input-field"
           placeholder="Enter Password"
           required
         />
-        <input type="checkbox" class="chech-box" /><span
-          >I agree to the terms and conditions.</span
-        >
-        <button type="submit" class="submit-btn">Register</button>
+        
+        <button type="button" class="submit-btn" onclick="signUp()">Register</button>
+        <br />
+        <!-- <div>
+          <img id="login_g" class="google_login" style="position: relative; left: 35px;" src="images/google-login.png" />
+        </div> -->
+        
       </form>
 
       <!-------Social Icons Starts------->
 
-      <div class="social-icons">
-        <img id="login_g" class="google_login" src="images/google-login.png" />
-      </div>
+      
 
       <!-------Social Icons Ends------->
     </div>
-
-    <script type="module">
-      var x = document.getElementById("login");
+    <script>var x = document.getElementById("login");
       var y = document.getElementById("register");
       var z = document.getElementById("btn");
 
@@ -113,60 +124,7 @@
         x.style.left = "50px";
         y.style.left = "450px";
         z.style.left = "0";
-      }
-
-      // Import the functions you need from the SDKs you need
-      import { initializeApp } from "https://www.gstatic.com/firebasejs/9.8.2/firebase-app.js";
-      import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.8.2/firebase-analytics.js";
-      import {
-        getAuth,
-        signInWithPopup,
-        GoogleAuthProvider,
-      } from "https://www.gstatic.com/firebasejs/9.8.2/firebase-auth.js";
-      // TODO: Add SDKs for Firebase products that you want to use
-      // https://firebase.google.com/docs/web/setup#available-libraries
-
-      // Your web app's Firebase configuration
-      // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-      const firebaseConfig = {
-        apiKey: "AIzaSyDr47pbikNwJGQxiKmbSnM7QgMJOv3W130",
-        authDomain: "inayat-backend.firebaseapp.com",
-        databaseURL: "https://inayat-backend-default-rtdb.firebaseio.com",
-        projectId: "inayat-backend",
-        storageBucket: "inayat-backend.appspot.com",
-        messagingSenderId: "248131097417",
-        appId: "1:248131097417:web:ac2066b2578b7eefa20098",
-        measurementId: "G-QK3T4RQR8Q",
-      };
-
-      login_g.addEventListener("click", (e) => {
-        signInWithPopup(auth, provider)
-          .then((result) => {
-            // This gives you a Google Access Token. You can use it to access the Google API.
-            const credential = GoogleAuthProvider.credentialFromResult(result);
-            const token = credential.accessToken;
-            // The signed-in user info.
-            const user = result.user;
-            alert(user.displayName);
-            // ...
-          })
-          .catch((error) => {
-            // Handle Errors here.
-            const errorCode = error.code;
-            const errorMessage = error.message;
-            // The email of the user's account used.
-            const email = error.customData.email;
-            // The AuthCredential type that was used.
-            const credential = GoogleAuthProvider.credentialFromError(error);
-            alert(errorMessage);
-            // ...
-          });
-      });
-      // Initialize Firebase
-      const app = initializeApp(firebaseConfig);
-      const analytics = getAnalytics(app);
-      const auth = getAuth(app);
-      const provider = new GoogleAuthProvider(app);
-    </script>
+      }</script>
+      <script src="js/log-register.js"></script>
   </body>
 </html>
