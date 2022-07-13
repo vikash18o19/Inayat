@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Inayat News Page</title>
+    <link rel="stylesheet" href="css/news_page.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body class="m-0 p-0">
+    <div class="container-fluid m-0 p-0">
+      <!--navbar-->
+      <div class="navbar_color">
+        <nav class="navbar navbar-expand-lg bg-dark">
+          <div class="container-fluid">
+            <a class="navbar-brand text-warning" href="index.html">Inayat</a>
+            <button
+              class="navbar-toggler"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#navbarSupportedContent"
+              aria-controls="navbarSupportedContent"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                  <a
+                    class="nav-link active text-white"
+                    aria-current="page"
+                    href="#"
+                    >Home</a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a
+                    class="nav-link active text-white"
+                    aria-current="page"
+                    href="#technews"
+                    id="technews"
+                    >Technology</a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a
+                    class="nav-link active text-white"
+                    aria-current="page"
+                    href="#sciencenews"
+                    id="sciencenews"
+                    >Science</a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a
+                    class="nav-link active text-white"
+                    aria-current="page"
+                    href="#businessnews"
+                    id="businessnews"
+                    >Business</a
+                  >
+                </li>
+              </ul>
+              <form class="d-flex" role="search">
+                <input
+                  class="form-control me-2"
+                  type="text"
+                  placeholder="Search news"
+                  id="newsQuery"
+                />
+                <button class="btn btn-outline-warning" type="button">
+                  Search
+                </button>
+              </form>
+            </div>
+          </div>
+        </nav>
+      </div>
+
+      <!--news-->
+      <div>
+        <div class="row m-3" id="newsType"></div>
+        <div class="row me-2 ms-2" id="newsdetails"></div>
+      </div>
+
+      <!--footer-->
+      <div class="mt-5">
+        <div>
+          <nav class="navbar navbar-expand-lg navbar-dark bg-dark mt-4">
+            <div class="container-fluid">
+              <h6 class="text-white me-auto ms-auto">
+                Copyright | <span class="text-warning">Inayat</span>
+              </h5>
+            </div>
+          </nav>
+        </div>
+      </div>
+
+    </div>
+
+    <script src="js/news_page.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js"
+      integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.min.js"
+      integrity="sha384-kjU+l4N0Yf4ZOJErLsIcvOU2qSb74wXpOhqTvwVx3OElZRweTnQ6d31fXEoRD1Jy"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
