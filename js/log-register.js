@@ -11,17 +11,32 @@ const firebaseApp = firebase.initializeApp({
 });
 const db = firebaseApp.firestore();
 const auth = firebaseApp.auth();
-
+const database = firebaseApp.database();
 
 
 
 const signUp =()=>{
     const email = document.getElementById("email").value;
     const password = document.getElementById("password").value;
+    const name = document.getElementById("name").value;
+    const contact = document.getElementById("contact").value;
     //console.log(email,password);
     firebase.auth().createUserWithEmailAndPassword(email, password)
   .then((result) => {
     // Signed in 
+        var user = auth.currentUser;
+
+        var database_ref = database.ref();
+
+        var user_data ={
+          email: email,
+          full_name: name,
+          contact_detail: contact,
+          last_login: Date.now()
+        }
+        
+        database_ref.child('users/'+user.uid).set(user_data)
+
         console.log("You are signed up");
         console.log(result);
         login();
