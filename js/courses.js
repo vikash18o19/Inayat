@@ -14,7 +14,9 @@ const auth = firebaseApp.auth();
 const purchase = () => {
   firebase.auth().onAuthStateChanged(function (user) {
     if (user) {
+
       location.replace("https://rzp.io/l/HTcOcgOW");
+
     } else {
       console.log("not logged in");
       location.replace("log-register.html");
