@@ -9,11 +9,12 @@ const firebaseApp = firebase.initializeApp({
   appId: "1:248131097417:web:ac2066b2578b7eefa20098",
   measurementId: "G-QK3T4RQR8Q"
 });
+
 const db = firebaseApp.firestore();
 const auth = firebaseApp.auth();
 const database = firebaseApp.database();
 
-
+var provider = new firebase.auth.GoogleAuthProvider();
 
 const signUp =()=>{
     const email = document.getElementById("email").value;
@@ -62,5 +63,32 @@ const signIn =()=> {
     console.log(error.code);
         console.log(error.message);
         alert(error.message);
+  });
+}
+
+const googleSignIn=()=>{
+  firebase.auth()
+  .signInWithPopup(provider)
+  .then((result) => {
+    /** @type {firebase.auth.OAuthCredential} */
+    var credential = result.credential;
+
+    // This gives you a Google Access Token. You can use it to access the Google API.
+    var token = credential.accessToken;
+    // The signed-in user info.
+    var user = result.user;
+    console.log("You are signed in");
+    console.log("Welcome"+user);
+    location.replace("index.html");
+    // ...
+  }).catch((error) => {
+    // Handle Errors here.
+    var errorCode = error.code;
+    var errorMessage = error.message;
+    // The email of the user's account used.
+    var email = error.email;
+    // The firebase.auth.AuthCredential type that was used.
+    var credential = error.credential;
+    // ...
   });
 }
