@@ -40,10 +40,24 @@ function getInputVal(id) {
   return document.getElementById(id).value;
 }
 
+const delete_val= async()=> {
+    document.getElementById("contact_form").reset();
+
+    await setTimeout(function(){
+
+      alert("Your response submitted successfully!");
+    }, 500); 
+  
+}
+
+
 //save messages to firebase
 
 function saveMessage(name, email, subject, phone, message) {
+  console.log(name, email, subject, phone, message);
+
   var newMessageRef = messagesRef.push();
+
   newMessageRef.set({
     name: name,
     email: email,
@@ -51,4 +65,10 @@ function saveMessage(name, email, subject, phone, message) {
     phone: phone,
     message: message,
   });
+  
+  delete_val();
 }
+
+
+
+
